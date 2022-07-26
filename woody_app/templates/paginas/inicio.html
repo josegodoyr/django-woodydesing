@@ -1,0 +1,23 @@
+{% extends "base.html"%}
+
+
+{% block titulo%} Nosotros {% endblock%}
+{% block contenido%}
+
+<div class="p-5 bg-light">
+    <h1 class="display-3">Woody Desing 👷‍♀️</h1>
+    <p class="lead">La madera a tu poto 🍑</p>
+    <hr class="my-2">
+    <p class="lead">
+    <div class="card">
+        <div class="card-header">
+            Ultimos 5 Proyectos
+        </div>
+        <div class="card-body">
+            {% include "main_table.html" %}
+        </div>
+    </div>
+    </p>
+</div>
+
+{% endblock%}

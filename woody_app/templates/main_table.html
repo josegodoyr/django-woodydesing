@@ -1,0 +1,29 @@
+<a name="" id="" class="btn btn-succes" href="{% url 'add_projects'%}" role="button" style="background-color: lightgreen;">Agregar proyecto</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>id_proyecto</th>
+            <th>Nombre</th>
+            <th>Cliente</th>
+            <th>Trello</th>
+            <th>Fecha inicio</th>
+            <th>Fecha termino</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for project in projects %}
+        <tr>
+            <td>{{project.id_proyecto}}</td>
+            <td>{{project.nombre}}</td>
+            <td>{{project.cliente}}</td>
+            <td>{{project.trello}}</td>
+            <td>{{project.fecha_inicio}}</td>
+            <td>{{project.fecha_entrega | default:''}}</td>
+            <td>{{project.estado | default:''}}</td>
+            <td><a hrref="{% url 'edit_projects' project.id %}" class="btn btn-primary">Editar</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
